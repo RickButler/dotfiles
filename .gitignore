@@ -1,0 +1,7 @@
+/*
+!/.gitignore
+!/.profile
+!/.config/
+/.config/configstore/
+/.config/nvim/plugin/
+!/rickbutler.omp.json
