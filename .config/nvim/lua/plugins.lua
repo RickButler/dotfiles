@@ -25,7 +25,7 @@ return require('packer').startup(function()
 			  local servers = require'lspinstall'.installed_servers()
   
 			  for _, server in pairs(servers) do
-				  require'lspconfig'[server].setup{}
+				  require'lspconfig'[server].setup(require'lang'[server])
 			  end
 		  end
 
@@ -40,6 +40,7 @@ return require('packer').startup(function()
   }
   
   use 'omnisharp/omnisharp-vim'
+  use 'nvim-lua/completion-nvim'
 
   -- editorconfig
   use 'editorconfig/editorconfig-vim'

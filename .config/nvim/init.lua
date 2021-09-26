@@ -12,4 +12,5 @@ vim.cmd('colorscheme material')
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
+vim.g.OmniSharp_server_use_mono = 1
 vim.g.OmniSharp_server_path = '~/.local/share/nvim/lspinstall/csharp/omnisharp/run'
