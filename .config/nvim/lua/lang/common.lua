@@ -1,7 +1,3 @@
--- this file is used to hook up nvim's LSP given a ready-to-go language server
--- see: https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
--- also see: https://medium.com/swlh/neovim-lsp-dap-and-fuzzy-finder-60337ef08060
-
 local o = vim.o
 local g = vim.g
 local api = vim.api
@@ -69,6 +65,6 @@ M.flags = {
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = capabilities
+
 
 return M

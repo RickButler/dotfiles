@@ -23,7 +23,6 @@ return require('packer').startup(function()
 		  local function setup_servers()
 			  require'lspinstall'.setup()
 			  local servers = require'lspinstall'.installed_servers()
-  
 			  for _, server in pairs(servers) do
 				  require'lspconfig'[server].setup(require'lang'[server])
 			  end
@@ -39,8 +38,11 @@ return require('packer').startup(function()
 	  end
   }
   
-  use 'omnisharp/omnisharp-vim'
   use 'nvim-lua/completion-nvim'
+
+  -- snippets
+  use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
 
   -- editorconfig
   use 'editorconfig/editorconfig-vim'
@@ -48,7 +50,7 @@ return require('packer').startup(function()
   -- Fuzzy Find
   use {
 	  'nvim-telescope/telescope.nvim',
-	  requires = {'nvim-lua/plenary.nvim'}
+	  requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
   }
 
   -- Syntax highlighting
@@ -90,6 +92,13 @@ return require('packer').startup(function()
 		  for _, debugger in ipairs(dbg_list) do
 			  dap_install.config(debugger)
 		  end
+	  end
+  }
+  use {
+	  'nvim-telescope/telescope-dap.nvim',
+	  requires = { 'nvim-telescope/telescope.nvim' },
+	  config = function()
+		  require('telescope').load_extension('dap');
 	  end
   }
   end)

@@ -2,7 +2,6 @@
 !/README.md
 !/.gitignore
 !/.profile
-!/.config/
-/.config/configstore/
-/.config/nvim/plugin/
+!/.config/nvim
+!/.config/PowerShell/Microsoft.PowerShell_profile.ps1
 !/rickbutler.omp.json
