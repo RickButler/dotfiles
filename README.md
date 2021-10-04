@@ -16,7 +16,7 @@ This doc assumes you are running Windows, most of the software used is in Linux 
 * [oh-my-posh](https://ohmyposh.dev/docs/linux)
    * I don't use the WSL specific version in WSL, I install the linux version.
 
-# Windows Specific
+# Font
 * [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 
 # Setting up NeoVim
