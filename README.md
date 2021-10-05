@@ -19,6 +19,9 @@ This doc assumes you are running Windows, most of the software used is in Linux 
 # Font
 * [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 
+* VSCode
+* (Install VSCode Server in WSL)[https://code.visualstudio.com/docs/remote/wsl]
+
 # Setting up NeoVim
 #### In NeoVim use commands to install various language dependencies.
 * DIInstall

@@ -53,8 +53,6 @@ M.on_attach = function(client, bufnr)
   require('completion').on_attach(client, bufnr)
 
   -- use <Tab> and <S-Tab> to navigate through popup menu
-  g.completion_enable_snippet = 'UltiSnips'
-  g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
   api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
   api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
 end
