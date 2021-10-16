@@ -1,6 +1,7 @@
 oh-my-posh --init --shell pwsh --config "~/rickbutler.omp.json" | Invoke-Expression
 Import-Module Terminal-Icons
 
+
 if($IsWindows) {
     Import-Module posh-git
     Import-Module posh-sshell
