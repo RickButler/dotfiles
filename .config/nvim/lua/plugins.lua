@@ -15,6 +15,9 @@ return require('packer').startup(function()
   -- Theme
   use 'marko-cerovac/material.nvim'
 
+  -- Clojure 
+  use 'Olical/conjure'
+
   -- LSP
   use 'neovim/nvim-lspconfig'
   use {
@@ -38,7 +41,27 @@ return require('packer').startup(function()
 	  end
   }
   
-  use 'nvim-lua/completion-nvim'
+  -- Install nvim-cmp, and buffer source as a dependency
+  use {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("lvim.core.cmp").setup()
+    end,
+    requires = {
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lua",
+    },
+    run = function()
+      -- cmp's config requires cmp to be installed to run the first time
+      if not lvim.builtin.cmp then
+        require("cmp").config()
+      end
+    end,
+  }
 
   -- snippets
   use 'SirVer/ultisnips'
@@ -101,4 +124,6 @@ return require('packer').startup(function()
 		  require('telescope').load_extension('dap');
 	  end
   }
+
+  use {"akinsho/toggleterm.nvim"}
   end)
