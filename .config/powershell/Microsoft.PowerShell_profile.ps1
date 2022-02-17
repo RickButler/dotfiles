@@ -3,8 +3,21 @@ Import-Module Terminal-Icons
 
 
 if($IsWindows) {
+    $VSInfo = GetVSInfo
+    $VSInstallPath = $VSInfo | select-object -ExpandPropert installationPath
+    $VSInstanceId = $VSInfo | select-object -ExpandPropert instanceId
+
+    if($VSInstanceID -and $VSInstallPath) { 
+        $DevShellPath = Get-ChildItem -Recurse -Path $VSInstallPath -Include Microsoft.VisualStudio.DevShell.dll | Select-Object -First 1
+        Import-Module $DevShellPath
+        Enter-VsDevShell $VSInstanceId
+    }
+
     Import-Module posh-git
-    Import-Module posh-sshell
-    Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
-    Enter-VsDevShell d9b5e285
+    Import-Module posh-sshell   
+}
+
+
+function GetVSInfo {
+    return & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -Latest -format json | ConvertFrom-Json
 }
