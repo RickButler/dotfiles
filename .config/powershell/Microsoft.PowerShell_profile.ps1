@@ -2,7 +2,7 @@ function GetVSInfo {
     return & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -Latest -format json | ConvertFrom-Json
 }
 
-oh-my-posh --init --shell pwsh --config "~/rickbutler.omp.json" | Invoke-Expression
+oh-my-posh --init --shell pwsh --config "~/profile.omp.json" | Invoke-Expression
 Import-Module Terminal-Icons
 
 
