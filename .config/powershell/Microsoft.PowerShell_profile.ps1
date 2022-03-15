@@ -17,6 +17,5 @@ if($IsWindows) {
         Enter-VsDevShell $VSInstanceId
     }
 
-    Import-Module posh-git
     Import-Module posh-sshell   
 }
