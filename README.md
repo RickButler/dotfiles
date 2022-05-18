@@ -23,6 +23,9 @@ This doc assumes you are running Windows, most of the software used is in Linux 
 # VSCode
 * (Install VSCode Server in WSL)[https://code.visualstudio.com/docs/remote/wsl]
 
+# Clone this repo
+This repo goes into your home directory in win/linux. The .gitignore can be funky as it's excluding everything and then explicitily including files.
+
 # Setting up NeoVim
 #### In NeoVim use commands to install various language dependencies.
 * DIInstall
