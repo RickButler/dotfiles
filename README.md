@@ -4,7 +4,7 @@ These are my dot files, but mostly just my NeoVim setup.
 # Setup
 This doc assumes you are running Windows, most of the software used is in Linux through WSL2. You can even [mix and match commands between WSL and Windows using aliases](https://docs.microsoft.com/en-us/windows/wsl/filesystems#interoperability-between-windows-and-linux-commands). I use Ubuntu 20.04 as my WSL distro, but most of these steps should work on any debian based distro.
 
-[I also change my WSL home directory](https://superuser.com/questions/1132626/changing-home-directory-of-user-on-windows-subsystem-for-linux) to be the same as my windows home directory %USERPROFILE%. This isn't a recommended practice, but it works and I like sharing config files. If you choose to do this, it may be nexessary to fix some permissions or [change how it mounts your drives](https://www.turek.dev/posts/fix-wsl-file-permissions/) in WSL.
+[I also change my WSL home directory](https://superuser.com/questions/1132626/changing-home-directory-of-user-on-windows-subsystem-for-linux) to be the same as my windows home directory %USERPROFILE%. This isn't a recommended practice. If you choose to do this, it may be necessary to fix some permissions or [change how drives mount](https://www.turek.dev/posts/fix-wsl-file-permissions/) in WSL.
 
 * Install [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) 
 * Install NeoVim >0.5 available in the [Unstable PPA](https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable)
@@ -29,4 +29,4 @@ This doc assumes you are running Windows, most of the software used is in Linux 
 * TSInstall
 * LspInstall
 
-*** TODO: automate the installs of for language based on lang.lua config.
+*** TODO: automate the installs for a language based on lang.lua config.
